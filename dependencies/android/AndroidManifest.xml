@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.haxe.extension.crashlytics" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+
+        <meta-data
+              android:name="io.fabric.ApiKey"
+              android:value="::ENV_FABRIC_API_KEY::" />
+
+    </application>
+
+</manifest>

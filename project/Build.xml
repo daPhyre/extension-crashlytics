@@ -1,0 +1,44 @@
+<xml>
+
+    <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+
+    <files id="iphone">
+
+        <compilerflag value="-Iinclude"/>
+        <compilerflag value="-F../dependencies/ios/" />
+
+        <file name="ios/ExtensionCrashlytics.mm"/>
+
+    </files>
+
+    <files id="common">
+
+        <compilerflag value="-Iinclude"/>
+
+        <file name="common/ExternalInterface.cpp"/>
+
+    </files>
+
+    <set name="SLIBEXT" value=".lib" if="windows"/>
+    <set name="SLIBEXT" value=".a" unless="windows"/>
+    <set name="SLIBEXT" value=".so" if="webos"/>
+
+    <set name="DEBUGEXTRA" value="-debug" if="fulldebug" />
+
+    <target id="NDLL" output="${LIBPREFIX}extension_crashlytics${MSVC_LIB_VERSION}${DEBUGEXTRA}${LIBEXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">
+
+        <outdir name="../ndll/${BINDIR}"/>
+        <ext value=".ndll" if="windows || mac || linux"/>
+
+        <files id="common"/>
+        <files id="iphone" if="iphone" />
+
+    </target>
+
+    <target id="default">
+
+        <target id="NDLL"/>
+
+    </target>
+
+</xml>

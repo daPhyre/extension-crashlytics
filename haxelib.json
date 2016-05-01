@@ -1,0 +1,13 @@
+{
+    "name": "extension-crashlytics",
+    "url": "https://github.com/daPhyre/extension-crashlytics",
+    "license": "MIT",
+    "tags": ["openfl", "fabric", "crashlytics","android","ios","extension"],
+    "description": "Use Crashlytics, the crash analytics library, in your OpenFL projects for Android and iOS.",
+    "version": "1.0.0",
+    "releasenote": "",
+    "contributors": ["daPhyre"],
+    "dependencies": {
+
+    }
+}
