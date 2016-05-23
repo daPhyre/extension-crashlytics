@@ -1,4 +1,4 @@
-#extension-Crashlytics
+#Extension-Crashlytics
 
 OpenFL extension to use Crashlytics on Android and iOS.
 
@@ -6,13 +6,13 @@ OpenFL extension to use Crashlytics on Android and iOS.
 
 Clone this repo, then use the command below:
 
-```
+```shell
 haxelib dev extension-crashlytics path/to/clone
 ```
 
 Then build the extension for iOS:
 
-```
+```shell
 lime rebuild extension-crashlytics ios
 ```
 
@@ -24,21 +24,27 @@ Because Crashlytics requires iOS minimum version of 6.0, you might need to modif
 
 Include the library in your Project.xml using the haxelib tag:
 
-```
+```xml
 <haxelib name="extension-crashlytics" />
 ```
 
 In your Main.hx, before starting your app cicle, add this line:
 
-```
+```haxe
 Crashlytics.init();
 ```
+
+###Android
+
+Currently Crashlytics for Android is not working properly, as the crashes reports are not being uploaded to the server. This issue is being reviewed.
+
+On the other hand, Answers data is being uploaded correctly. If you are interested in getting these, all you need is to create a dummy project with the same package name as your Haxe project, and activate Crashlytics to it. After the project appears on your Fabric account, all Answers analytics will be uploaded to it.
 
 ###iOS
 
 Add these lines in your PROJ-Info.plist template, before the final closing `</dict>`:
 
-```
+```xml
     <key>Fabric</key>
     <dict>
         <key>APIKey</key>
@@ -61,13 +67,13 @@ https://github.com/openfl/lime/blob/master/templates/iphone/PROJ/PROJ-Info.plist
 
 To use it, save it at `templates/iphone/PROJ/PROJ-Info.plist`, and add this line in your project.xml:
 
-```
+```xml
 <template path="templates" />
 ```
 
 To activate Crashlytics for the first time on your app, build your project for iOS, and open your .xcodeproj file on Xcode, located at `export/ios/`. There, add this Run Script to your Build Phases and build:
 
-```
+```shell
 {extension-path}/extension-crashlitycs/dependencies/ios/Fabric.framework YOUR_API_KEY YOUR_BUILD_SECRET
 ```
 

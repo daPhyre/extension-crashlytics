@@ -8,6 +8,11 @@
     <property file="ant.properties"/>
     <property file="project.properties"/>
 
+    <property name="crashlytics.project.path" location="../../"/>
+    <property name="crashlytics.manifest.path" location="AndroidManifest.xml"/>
+
+    <import file="fabric/crashlytics_build.xml"/>
+
     <import file="${sdk.dir}/tools/ant/build.xml"/>
 
 </project>
