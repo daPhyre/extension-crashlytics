@@ -6,8 +6,8 @@
     <application>
 
         <meta-data
-              android:name="io.fabric.ApiKey"
-              android:value="::ENV_FABRIC_API_KEY::" />
+            android:name="io.fabric.ApiKey"
+            android:value="7720d1021a8f0a648801159b6d204a68a7d38bfe" />
 
     </application>
 

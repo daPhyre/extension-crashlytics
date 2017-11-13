@@ -9,7 +9,7 @@
 
     <!-- Use the following for an Android Java extension, not needed otherwise -->
 
-    <dependency name="extension_crashlytics" path="dependencies/android" if="android" />
+    <dependency name="crashlytics" path="dependencies/android" if="android" />
     <android extension="org.haxe.extension.ExtensionCrashlytics" />
 
 </project>
