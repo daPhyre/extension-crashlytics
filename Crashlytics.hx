@@ -1,4 +1,4 @@
-package com.minogames.ext;
+package;
 
 #if cpp
 import cpp.Lib;
