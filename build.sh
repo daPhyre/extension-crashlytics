@@ -2,8 +2,8 @@
 if [ -d "ndll" ]; then
     rm -r ndll
 fi
-if [ -d "obj" ]; then
-    rm -r obj
+if [ -d "native/obj" ]; then
+    rm -r native/obj
 fi
 
 (cd project && haxelib run hxcpp Build.xml -Diphoneos -DHXCPP_ARM   -DHXCPP_CLANG -DOBJC_ARC $1)
